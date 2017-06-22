@@ -169,7 +169,7 @@ before_install:
   # Bash
   - pip install beautysh
   # Elixir
-  - PERL_MM_USE_DEFAULT=1 cpan -i XML::Parser -y
+  - PERL_MM_USE_DEFAULT=1 cpan -i XML::Parser
   - brew install erlang@18
   - brew install elixir
   - mix local.hex --force
