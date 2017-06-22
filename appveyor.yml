@@ -131,6 +131,7 @@ install:
 
   # Elixir
   - cinst elixir -y
+  - refreshenv
   - where mix
   - mix local.hex --force
   - mix archive.install github lpil/exfmt --force

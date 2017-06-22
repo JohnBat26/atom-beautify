@@ -65,8 +65,6 @@ addons:
     - sourceline: 'deb http://dist.crystal-lang.org/apt crystal main'
     - sourceline: 'deb http://ppa.launchpad.net/avsm/ppa/ubuntu trusty main'
     - sourceline: 'deb http://ppa.launchpad.net/ubuntu-lxc/lxd-stable/ubuntu trusty main'
-    - sourceline: 'deb https://packages.erlang-solutions.com/ubuntu trusty contrib'
-      key_url: 'https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
     packages:
     - build-essential
     - git
@@ -78,8 +76,6 @@ addons:
     - opam
     - php5-cli
     - golang
-    - esl-erlang
-    - elixir
 
 cache:
   pip: true
@@ -175,6 +171,13 @@ before_install:
   # Elixir
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew install elixir;
+    fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb;
+      sudo dpkg -i erlang-solutions_1.0_all.deb;
+      sudo apt-get update;
+      sudo apt-get install esl-erlang;
+      sudo apt-get install elixir;
     fi
   - mix local.hex --force
   - mix archive.install github lpil/exfmt --force
