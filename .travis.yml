@@ -26,7 +26,6 @@ matrix:
     - os: linux
       dist: trusty
       sudo: required
-      group: edge
       services:
         - docker
       env:
@@ -79,6 +78,7 @@ addons:
     - opam
     - php5-cli
     - golang
+    - esl-erlang
     - elixir
 
 cache:
@@ -176,5 +176,5 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew install elixir;
     fi
-  - sudo mix local.hex --force
-  - sudo mix archive.install github lpil/exfmt --force
+  - mix local.hex --force
+  - mix archive.install github lpil/exfmt --force
