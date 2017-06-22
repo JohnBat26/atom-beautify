@@ -169,14 +169,6 @@ before_install:
   # Bash
   - pip install beautysh
   # Elixir
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      brew install elixir;
-    fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb;
-      sudo dpkg -i erlang-solutions_1.0_all.deb;
-      sudo apt-get update;
-      sudo apt-get install elixir;
-    fi
+  - brew install elixir
   - mix local.hex --force
   - mix archive.install github lpil/exfmt --force
