@@ -79,6 +79,12 @@ install:
 
   - "%CMD_IN_ENV% pip install --upgrade sqlparse"
 
+  # Elixir
+  - cinst elixir -y
+  - refreshenv
+  - mix local.hex --force
+  - mix archive.install github lpil/exfmt --force
+
   # Ruby & Gem
   - SET PATH=C:\Ruby%RUBY_VERSION%\bin;C:\Ruby23-x64\DevKit\mingw\bin;%PATH%
   # Rubocop
@@ -111,12 +117,6 @@ install:
   - curl http://get.sensiolabs.org/php-cs-fixer.phar -o php-cs-fixer
   - "SET PATH=%cd%;%PATH%" # Add current working directory to PATH
   - where php-cs-fixer
-  
-  # Elixir
-  - cinst elixir -y
-  - refreshenv
-  - mix local.hex --force
-  - mix archive.install github lpil/exfmt --force
 
   # Uncrustify
   - curl -k -L https://sourceforge.net/projects/uncrustify/files/uncrustify/uncrustify-0.65/uncrustify-0.65-win32.zip/download -o uncrustify.zip
