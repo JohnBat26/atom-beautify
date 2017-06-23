@@ -173,6 +173,10 @@ before_install:
       brew install elixir;
     fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb;
+      sudo dpkg -i erlang-solutions_1.0_all.deb;
+      sudo apt-get update;
+      sudo apt-get install esl-erlang;
       \curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s;
       kiex install 1.4.5;
     fi
