@@ -179,6 +179,8 @@ before_install:
       sudo apt-get install erlang;
       kiex install 1.4.5;
       kiex use 1.4.5;
+      kiex default 1.4.5;
+      [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex";
     fi
   - mix local.hex --force
   - mix archive.install github lpil/exfmt --force
