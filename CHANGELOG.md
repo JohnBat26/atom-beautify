@@ -1,5 +1,10 @@
 # Next
-- Fixes [#545](https://github.com/Glavin001/atom-beautify/issues/1030). Add support for Elixir language with [exfmt](https://github.com/lpil/exfmt)
+- Fixes #1638. update type-formatter and Fixes indent size not supported
+- Add support for rustfmt-nightly
+
+# v0.30.4 (2017-07-14)
+- Fixes #1732. Improve deprecation message for old options for new Executables
+- Fixes #1751. Fix for latexindent v3
 
 # v0.30.3 (2017-06-21)
 - Improve command not found error message
