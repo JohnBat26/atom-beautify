@@ -13,7 +13,7 @@ module.exports = class Gherkin extends Beautifier
   }
 
   beautify: (text, language, options) ->
-    Lexer = require('gherkin').Lexer('en')
+    Lexer = require('gherkin').Lexer('ru')
     logger = @logger
     return new @Promise((resolve, reject) ->
       recorder = {
